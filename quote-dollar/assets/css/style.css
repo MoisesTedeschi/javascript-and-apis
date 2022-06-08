@@ -1,4 +1,5 @@
 body {
+    color: #222222;
     font-family: 'Open Sans', sans-serif;
 }
 .cotation {
@@ -12,6 +13,6 @@ body {
 .cotation p {
     margin-bottom: 0;
 }
-.cotation p > strong {
+.cotation p > strong, #valor_dolar {
     font-weight: 700;
 } 

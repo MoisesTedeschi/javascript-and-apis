@@ -59,3 +59,10 @@ function quoteDolar() {
             console.log(error)
         })
 }
+
+function speechDollar() {
+    const speech = new SpeechSynthesisUtterance()
+    speech.text = `Dólar Comercial ${parseFloat(JSON.parse(localStorage.DolarToDay)).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`
+    speech.lang = "pt-BR"
+    window.speechSynthesis.speak(speech)
+}
