@@ -1,0 +1,11 @@
+.cotation {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+    height: 72px; 
+    border: 1px solid #DDDDDD; 
+    box-sizing: border-box;
+}
+.cotation p {
+    margin-bottom: 0;
+}   
