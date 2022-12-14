@@ -1,0 +1,24 @@
+{
+  "name": "crud-nodejs",
+  "version": "1.0.0",
+  "description": "Simple crud to exercise NodeJS skills.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Moisés Tedeschi",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.27.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
