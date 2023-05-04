@@ -1,0 +1,1 @@
+console.log("Hash de Script via Função.");

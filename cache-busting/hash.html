@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="">
+
+    <title>Cache Busting - Hash de CSS e JS (MOA)</title>
+
+    <!--Daria para pegar pelo ID do Script e trocar o link da versão.-->
+    <script type="text/javascript" src="./script2.js" id="hash"></script>
+
+    <!-- Cache Busting - Hash de CSS e JS -->
+    <script>
+        // Gerador de Hash com números aleatórios + Data (Só para garantir que não vai se repetir).
+        let hashGlobal = Math.floor(Math.random() * new Date().getTime());
+        
+        // Pega o ID do elemento e atribui um novo valor ao href do mesmo.
+        let hashID = document.getElementById("hash");
+        hashID.attributes.src.nodeValue = `./script2.js?v=${hashGlobal}`;
+
+        // Função para criação do CSS e JS de forma dinâmica e tbm  trocar a versão sempre que a tela for atualizada.
+        function createFileElement(type, href) {
+            const fileNode = document.createElement(type);
+            fileNode.type = type === "link" ? "text/css" : "text/javascript";
+            fileNode.rel = type === "link" ? "stylesheet" : "";
+            fileNode.href = href;
+            fileNode.src = href;
+            return fileNode;
+        }
+
+        // Criação do CSS e do JS.
+        const cssNode = createFileElement("link", `./style.css?v=${hashGlobal}`);
+        const jsNode = createFileElement("script", `./script.js?v=${hashGlobal}`);
+
+        // Adição do CSS e do JS no head da página.
+        document.getElementsByTagName("head")[0].appendChild(cssNode);
+        document.getElementsByTagName("head")[0].appendChild(jsNode);
+    </script>
+    <!-- Cache Busting - Hash de CSS e JS -->
+
+</head>
+<body>
+
+    <div class="container">
+        <h1>Batata Frita</h1>
+    </div>
+    
+</body>
+</html>
